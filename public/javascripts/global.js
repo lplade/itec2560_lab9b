@@ -8,7 +8,7 @@ $(document).ready(function() {
     populateTable();
 
     // Username link click
-    $('#userList table tbody').on('click'), 'td a.linkshowuser', showUserInfo);
+    $('#userList table tbody').on('click', 'td a.linkshowuser', showUserInfo);
 
 });
 
