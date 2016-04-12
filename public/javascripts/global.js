@@ -15,7 +15,6 @@ $(document).ready(function() {
 
     // Delete User link click
     $('#userList table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
-
 });
 
 // Functions =============================================================
@@ -152,6 +151,7 @@ function deleteUser(event) {
       populateTable();
 
     });
+
   }
   else {
     // If they said no to the confirm, do nothing
