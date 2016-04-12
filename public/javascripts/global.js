@@ -24,13 +24,13 @@ function populateTable() {
     var tableContent = '';
 
     // jQuery AJAX call for JSON
-    $.getJSON( '/users/userlist', function( data ) {
+    $.getJSON('/users/userlist', function (data) {
 
         //Stick our user data array into a userlist variable in the global object
         userListData = data;
 
         // For each item in our JSON, add a table row and cells to the content string
-        $.each(data, function(){
+        $.each(data, function () {
             tableContent += '<tr>';
             tableContent += '<td><a href="#" class="linkshowuser" rel="' + this.username + '">' + this.username + '</a></td>';
             tableContent += '<td>' + this.email + '</td>';
@@ -41,7 +41,7 @@ function populateTable() {
         // Inject the whole content string into our existing HTML table
         $('#userList table tbody').html(tableContent);
     });
-};
+}
 
 // Show User Info
 function showUserInfo(event) {
@@ -64,7 +64,7 @@ function showUserInfo(event) {
     $('#userInfoGender').text(thisUserObject.gender);
     $('#userInfoLocation').text(thisUserObject.location);
 
-};
+}
 
 // Add User
 function addUser(event) {
@@ -87,7 +87,7 @@ function addUser(event) {
         'age': $('#addUser fieldset input#inputUserAge').val(),
         'location': $('#addUser fieldset input#inputUserLocation').val(),
         'gender': $('#addUser fieldset input#inputUserGender').val()
-    }
+    };
 
     // Use AJAX to post the object to our adduser service
     $.ajax({
@@ -119,4 +119,4 @@ function addUser(event) {
     alert('Please fill in all fields');
     return false;
   }
-};
+}
